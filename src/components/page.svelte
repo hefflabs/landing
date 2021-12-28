@@ -7,14 +7,14 @@
 </svelte:head>
 
 <div class="h-full flex flex-col justify-between">
-	<div>
+	<div class="overflow-y-auto">
 		<div class="mb-6">
 			<slot name="title" />
 		</div>
 		<slot />
 	</div>
 
-	<div class="flex flex-row justify-between items-end">
+	<div class="flex flex-row justify-between items-end flex-wrap gap-6">
 		<slot name="bottom-start" />
 		<slot name="bottom-end" />
 	</div>

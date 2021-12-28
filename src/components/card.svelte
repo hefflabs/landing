@@ -1,14 +1,13 @@
-<div class="h-screen flex flex-col justify-center items-center overflow-hidden">
+<div class="h-screen flex flex-col justify-between md:justify-center items-center overflow-hidden">
 	<slot name="top" />
-	<div class="bg-white dark:bg-jet p-8 rounded-2xl card overflow-hidden">
+	<div class="bg-white dark:bg-jet p-8 card overflow-hidden">
 		<slot />
 	</div>
 	<slot name="bottom" />
 </div>
 
-<style>
+<style lang="postcss">
 	.card {
-		width: 648px;
-		height: 400px;
+        @apply h-full w-screen md:w-162 md:h-100 md:rounded-2xl;
 	}
 </style>

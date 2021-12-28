@@ -9,7 +9,7 @@
 </script>
 
 <Page title="ColorStick">
-	<div slot="title" class="flex flex-row items-center gap-6">
+	<div slot="title" class="flex flex-row items-center gap-6 flex-wrap">
 		<a href="/projects">
 			<Button>
 				<Back />
@@ -29,7 +29,7 @@
 		design, and mobile app.
 	</p>
 
-	<div slot="bottom-start" class="flex flex-row gap-3">
+	<div slot="bottom-start" class="flex flex-row gap-3 flex-wrap">
 		<Button disabled>
 			<Appstore slot="prefix" />
 			App Store

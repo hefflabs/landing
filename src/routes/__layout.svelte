@@ -43,7 +43,7 @@
 </script>
 
 <Card>
-	<div slot="top" class="pb-6 nav-wrapper flex flex-row justify-end">
+	<div slot="top" class="py-6 nav-wrapper flex flex-row justify-center md:justify-end">
 		<div class="flex flex-row justify-between w-max rounded-lg bg-white dark:bg-jet relative">
 			<div
 				class="highlight"

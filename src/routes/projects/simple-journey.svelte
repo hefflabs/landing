@@ -10,7 +10,7 @@
 </script>
 
 <Page title="SimpleJourney">
-	<div slot="title" class="flex flex-row items-center gap-6">
+	<div slot="title" class="flex flex-row items-center gap-6 flex-wrap">
 		<a href="/projects">
 			<Button>
 				<Back />
@@ -29,7 +29,7 @@
 		guide the direction of the project.
 	</p>
 
-	<div slot="bottom-start" class="flex flex-row gap-3">
+	<div slot="bottom-start" class="flex flex-row gap-3 flex-wrap">
 		<a href="https://thesimplejourney.com">
 			<Button>
 				<Link slot="prefix" />
