@@ -1,4 +1,9 @@
-<div class="h-screen flex flex-col justify-between md:justify-center items-center overflow-hidden">
+<script lang="ts">
+    $: innerHeight = 0;
+</script>
+
+<svelte:window bind:innerHeight />
+<div class={`flex flex-col justify-between items-center md:justify-center overflow-hidden`} style={`height: ${innerHeight}px`}>
 	<slot name="top" />
 	<div class="bg-white dark:bg-jet p-8 card overflow-hidden">
 		<slot />

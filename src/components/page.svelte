@@ -7,7 +7,7 @@
 </svelte:head>
 
 <div class="h-full flex flex-col justify-between">
-	<div class="overflow-y-auto">
+	<div class="overflow-hidden">
 		<div class="mb-6">
 			<slot name="title" />
 		</div>

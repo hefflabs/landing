@@ -40,6 +40,8 @@
 			return 'slide-left';
 		}
 	}
+
+    
 </script>
 
 <Card>
