@@ -40,13 +40,13 @@
 			return 'slide-left';
 		}
 	}
-
-    
 </script>
 
 <Card>
 	<div slot="top" class="py-6 nav-wrapper flex flex-row justify-center md:justify-end">
-		<div class="flex flex-row justify-between w-max rounded-lg bg-white dark:bg-jet relative">
+		<div
+			class="flex landscape:flex-col md:landscape:flex-row justify-between w-max rounded-lg bg-white dark:bg-jet relative"
+		>
 			<div
 				class="highlight"
 				class:about={path === '/about'}
@@ -69,7 +69,7 @@
 
 <style lang="postcss">
 	.nav-wrapper {
-		width: 648px;
+		@apply w-162;
 	}
 
 	.nav-item {
@@ -81,12 +81,26 @@
 		transform: translate(0);
 	}
 
-	.about {
-		transform: translateX(96px) !important;
+	.highlight.about {
+		transform: translateX(96px);
 	}
 
-	.project {
-		transform: translateX(192px) !important;
+	.highlight.project {
+		transform: translateX(192px);
+	}
+
+	@media (orientation: landscape) and (max-width: theme('screens.md')) {
+        .nav-wrapper {
+            @apply w-min px-4;
+        }
+
+		.highlight.about {
+			transform: translateY(40px);
+		}
+
+		.highlight.project {
+			transform: translateY(80px);
+		}
 	}
 
 	@keyframes slide-right {

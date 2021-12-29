@@ -26,7 +26,7 @@
 			</ProjectImage>
 		</div>
 		<div>
-			<div class="text-lg font-semibold leading-6 mb-2">{title}</div>
+			<div class="text-lg font-semibold leading-6 mb-1">{title}</div>
 			<span>{projectType.toString()} • {description}</span>
 		</div>
 	</div>
