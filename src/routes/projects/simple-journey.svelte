@@ -36,10 +36,12 @@
 				Website
 			</Button>
 		</a>
-		<Button disabled>
-			<Appstore slot="prefix" />
-			App Store
-		</Button>
+		<a href="https://apps.apple.com/us/app/the-simple-journey/id1597590456">
+			<Button>
+				<Appstore slot="prefix" />
+				App Store
+			</Button>
+		</a>
 		<a href="https://play.google.com/store/apps/details?id=com.thesimplejourney.simplejourney">
 			<Button>
 				<Googleplay slot="prefix" />

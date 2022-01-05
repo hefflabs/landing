@@ -30,13 +30,17 @@
 	</p>
 
 	<div slot="bottom-start" class="flex flex-row gap-3 flex-wrap">
-		<Button disabled>
-			<Appstore slot="prefix" />
-			App Store
-		</Button>
-		<Button disabled>
-			<Googleplay slot="prefix" />
-			Google Play
-		</Button>
+		<a href="https://apps.apple.com/us/app/true-colors-colorstick/id1602858479">
+			<Button>
+				<Appstore slot="prefix" />
+				App Store
+			</Button>
+		</a>
+		<a href="https://play.google.com/store/apps/details?id=com.hefflabs.colorstick">
+			<Button>
+				<Googleplay slot="prefix" />
+				Google Play
+			</Button>
+		</a>
 	</div>
 </Page>
