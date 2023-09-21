@@ -1,0 +1,29 @@
+---
+import ChevronRight from "../icons/ChevronRight.svelte";
+import type { ProjectFrontMatter } from "../types";
+import ProjectImage from "./ProjectImage.astro";
+
+interface Props extends ProjectFrontMatter {
+  path: string;
+}
+
+const { title, type, image, description, path } = Astro.props;
+---
+
+<a
+  class="border-glass hover:border-glass-hover border-2 rounded-xl p-3 flex flex-row justify-between items-center cursor-pointer"
+  href={path}
+>
+  <div class="flex flex-row gap-3 items-center">
+    <div class="p-1">
+      <ProjectImage>
+        <img src={image} />
+      </ProjectImage>
+    </div>
+    <div>
+      <div class="text-lg font-semibold leading-6 mb-1">{title}</div>
+      <span>{type.toString()} • {description}</span>
+    </div>
+  </div>
+  <ChevronRight />
+</a>

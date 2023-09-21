@@ -1,0 +1,35 @@
+---
+import CardLayout from "../layouts/CardLayout.astro";
+import Labeled from "../components/Labeled.astro";
+import IconLabel from "../components/IconLabel.astro";
+import Person from "../icons/person.astro";
+import Mail from "../icons/mail.astro";
+import Hefflabs from "../icons/hefflabs.astro";
+import Preferences from "../components/Preferences.svelte";
+---
+
+<CardLayout title="Heff Labs">
+  <div slot="title">
+    <div class="w-64 pb-6 pt-2">
+      <Hefflabs />
+    </div>
+    <h2 class="text-xl font-semibold">Fullstack Software Development</h2>
+  </div>
+
+  <Labeled label="Contact" slot="bottom-start">
+    <IconLabel>
+      <Person slot="icon" />
+       James Heffernan
+    </IconLabel>
+    <a href="mailto:james@hefflabs.com" class="text-primary">
+      <IconLabel>
+        <Mail slot="icon" />
+         james@hefflabs.com
+      </IconLabel>
+    </a>
+  </Labeled>
+
+  <Labeled label="Preferences" slot="bottom-end">
+    <Preferences client:only />
+  </Labeled>
+</CardLayout>

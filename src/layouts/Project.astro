@@ -1,0 +1,53 @@
+---
+import CardLayout from "./CardLayout.astro";
+import Button from "../components/Button.svelte";
+import Back from "../icons/back.astro";
+import ProjectImage from "../components/ProjectImage.astro";
+import Link from "../icons/link.astro";
+import Appstore from "../icons/appstore.astro";
+import Googleplay from "../icons/googleplay.astro";
+import { type ProjectFrontMatter } from "../types";
+
+interface Props {
+  frontmatter: ProjectFrontMatter;
+}
+
+const {
+  frontmatter: { title, image, links },
+} = Astro.props;
+---
+
+<CardLayout title={`Heff Labs - ${title}`}>
+  <div slot="title" class="flex flex-row items-center gap-6 flex-wrap">
+    <a href="/projects">
+      <Button>
+        <Back />
+      </Button>
+    </a>
+    <ProjectImage>
+      <img src={image} />
+    </ProjectImage>
+    <h1 class="text-2xl font-bold">{title}</h1>
+  </div>
+  <slot />
+  <div slot="bottom-start" class="flex flex-row gap-3 flex-wrap">
+    {
+      links.map((link) => (
+        <a href={link.href}>
+          <Button>
+            <div slot="prefix">
+              {link.type === "App Store" ? (
+                <Appstore />
+              ) : link.type === "Google Play" ? (
+                <Googleplay />
+              ) : (
+                <Link />
+              )}
+            </div>
+            {link.type}
+          </Button>
+        </a>
+      ))
+    }
+  </div>
+</CardLayout>

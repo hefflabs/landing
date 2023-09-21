@@ -1,6 +1,0 @@
-<div class="flex flex-row gap-3 items-center">
-    <slot name="icon" />
-    <span class="font-medium leading-6">
-        <slot />
-    </span>
-</div>

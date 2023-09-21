@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 /* Write your global styles here, in PostCSS syntax */
 @tailwind base;
@@ -7,51 +7,47 @@
 
 /* Dark mode */
 :root {
-    --glass: hsla(0, 0%, 100%, 0.12);
-    --glass-hover: hsla(0, 0%, 100%, 0.20);
+  --glass: hsla(0, 0%, 100%, 0.12);
+  --glass-hover: hsla(0, 0%, 100%, 0.2);
 }
 
 /* Light mode */
 :root:not(.dark) {
-    --glass: hsla(0, 0%, 0%, 0.12);
-    --glass-hover: hsla(0, 0%, 0%, 0.20);
+  --glass: hsla(0, 0%, 0%, 0.12);
+  --glass-hover: hsla(0, 0%, 0%, 0.2);
 }
 
 :root[data-primary-color="0"] {
-    --primary: theme('colors.red');
+  --primary: theme("colors.red");
 }
 
 :root[data-primary-color="1"] {
-    --primary: theme('colors.gold');
+  --primary: theme("colors.gold");
 }
 
 :root[data-primary-color="2"] {
-    --primary: theme('colors.green');
+  --primary: theme("colors.green");
 }
 
 :root[data-primary-color="3"] {
-    --primary: theme('colors.blue');
+  --primary: theme("colors.blue");
 }
 
 :root[data-primary-color="4"] {
-    --primary: theme('colors.purple');
+  --primary: theme("colors.purple");
 }
 
 body {
-    background-image: radial-gradient(theme('colors.gray') 1px, transparent 0);
-    background-size: 48px 48px;
-    /* TODO: Make sure centered */
-    /* background-position: -24px -24px; */
-  }
-
-h1 {
-    @apply text-3xl font-bold;
+  background-image: radial-gradient(theme("colors.gray") 1px, transparent 0);
+  background-size: 48px 48px;
+  /* TODO: Make sure centered */
+  /* background-position: -24px -24px; */
 }
 
 h2 {
-    @apply text-xl font-semibold;
+  @apply text-xl font-semibold;
 }
 
 p {
-    @apply leading-8;
+  @apply leading-8;
 }
