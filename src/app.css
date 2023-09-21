@@ -44,10 +44,10 @@ body {
   /* background-position: -24px -24px; */
 }
 
-h2 {
-  @apply text-xl font-semibold;
-}
-
 p {
   @apply leading-8;
+}
+
+.btn {
+  @apply flex flex-row gap-3 p-2 bg-glass rounded-lg font-medium hover:bg-glass-hover transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
 }
