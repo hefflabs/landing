@@ -1,5 +1,5 @@
 {
-  "name": "landing",
+  "name": "test",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -7,16 +7,21 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "pages:dev": "wrangler pages dev --compatibility-date=2023-09-21 --proxy 3000 -- astro dev",
+    "pages:deploy": "astro build && wrangler pages deploy ./dist"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^7.2.0",
-    "@astrojs/mdx": "^1.1.0",
     "@astrojs/prefetch": "^0.4.0",
     "@astrojs/svelte": "^4.0.2",
     "@astrojs/tailwind": "^5.0.0",
-    "astro": "^3.1.1",
-    "svelte": "^4.0.0",
-    "tailwindcss": "^3.0.24"
+    "astro": "^3.1.2",
+    "svelte": "^4.2.1",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "wrangler": "^3.9.0",
+    "@sveltejs/adapter-cloudflare": "^2.3.3"
   }
 }
