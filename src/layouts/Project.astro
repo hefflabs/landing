@@ -30,19 +30,17 @@ const {
   <div slot="bottom-start" class="flex flex-row gap-3 flex-wrap">
     {
       links.map((link) => (
-        <a href={link.href}>
-          <Button>
-            <div slot="prefix">
-              {link.type === "App Store" ? (
-                <Appstore />
-              ) : link.type === "Google Play" ? (
-                <Googleplay />
-              ) : (
-                <Link />
-              )}
-            </div>
-            {link.type}
-          </Button>
+        <a href={link.href} class="btn">
+          <div slot="prefix">
+            {link.type === "App Store" ? (
+              <Appstore />
+            ) : link.type === "Google Play" ? (
+              <Googleplay />
+            ) : (
+              <Link />
+            )}
+          </div>
+          {link.type}
         </a>
       ))
     }
