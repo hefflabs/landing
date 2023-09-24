@@ -1,0 +1,10 @@
+{
+  "prettier.documentSelectors": [
+    "**/*.astro"
+  ],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.configPath": "./prettier.config.js",
+  "prettier.prettierPath": "./node_modules/prettier",
+}

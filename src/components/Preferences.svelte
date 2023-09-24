@@ -15,7 +15,7 @@
   $: darkMode = $theme === Theme.Dark;
 </script>
 
-<div class="flex flex-row gap-3">
+<div class="flex flex-row flex-wrap gap-3">
   <button class="btn" on:click={cyclePrimaryColor}>
     <div class="w-6 h-6 rounded-xl bg-primary" />
     {PrimaryColor[$primaryColor]}

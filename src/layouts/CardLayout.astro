@@ -1,6 +1,5 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import { getPrimaryColor } from "../store";
 import "../app.css";
 
 const { title } = Astro.props;
@@ -8,13 +7,20 @@ const { pathname } = Astro.url;
 ---
 
 <style lang="postcss">
-	.card {
-        @apply h-full w-screen md:w-162 md:h-100 md:rounded-2xl;
-	}
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
 
-	.nav-wrapper {
-		@apply w-162;
-	}
+body:global {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+html:global {
+  height: -webkit-fill-available;
+}
 
 	.nav-item {
 		@apply font-medium flex justify-center leading-8 w-24 rounded-lg p-1 z-20;
@@ -31,20 +37,6 @@ const { pathname } = Astro.url;
 
 	.highlight.project {
 		transform: translateX(192px);
-	}
-
-	@media (orientation: landscape) and (max-width: theme('screens.md')) {
-        .nav-wrapper {
-            @apply w-min px-4;
-      }
-
-		.highlight.about {
-			transform: translateY(40px);
-		}
-
-		.highlight.project {
-			transform: translateY(80px);
-		}
 	}
 </style>
 
@@ -80,54 +72,50 @@ const { pathname } = Astro.url;
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
     <title>{title}</title>
   </head>
-  <body class="bg-platinum dark:bg-black text-jet dark:text-white">
+  <body class="h-screen bg-platinum text-jet dark:bg-black dark:text-white">
     <div
-      class="flex flex-col justify-between landscape:flex-row landscape:justify-start md:landscape:justify-center md:landscape:flex-col items-center md:justify-center overflow-hidden h-screen"
-    >
-      <div class="py-6 nav-wrapper flex flex-row justify-center md:justify-end">
-        <div
-          class="flex landscape:flex-col md:landscape:flex-row justify-between w-max rounded-lg bg-white dark:bg-jet relative"
-        >
+      class="flex h-full flex-col items-center overflow-hidden p-3 md:justify-center">
+      <div class="flex w-full flex-row justify-start pb-3 md:w-162 md:pb-6">
+        <div class="relative flex w-max rounded-lg bg-white dark:bg-jet">
           <div
             transition:name="fade"
             class:list={[
               "highlight",
               {
-                about: pathname === "/about",
+                about: pathname.startsWith("/about"),
                 project: pathname.startsWith("/projects"),
               },
-            ]}
-          >
+            ]}>
           </div>
           <a class="nav-item" href="/">Home</a>
           <a class="nav-item" href="/about">About</a>
           <a class="nav-item" href="/projects">Projects</a>
         </div>
       </div>
-      <div class="bg-white dark:bg-jet p-8 card overflow-hidden">
+      <div
+        class="scrollbar-hide h-full w-full overflow-auto rounded-2xl bg-white dark:bg-jet md:h-100 md:w-162">
         <div transition:animate="fade" class="h-full">
-          <div class="h-full flex flex-col justify-between">
-            <div class="overflow-y-auto mb-3">
+          <div
+            class="flex h-max min-h-full flex-col justify-between p-6 md:p-8">
+            <div class="mb-3 flex-grow overflow-y-auto">
               <div class="mb-4">
                 <slot name="title" />
               </div>
               <slot />
             </div>
-
             <div
-              class="flex flex-row justify-between items-end flex-wrap gap-5"
-            >
+              class="flex h-min flex-row flex-wrap items-end justify-between gap-5">
               <slot name="bottom-start" />
               <slot name="bottom-end" />
             </div>
           </div>
         </div>
       </div>
-      <slot name="bottom" />
     </div>
   </body>
 </html>
